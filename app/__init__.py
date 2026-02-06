@@ -5,14 +5,16 @@ from flask_migrate import Migrate
 from flask_login import LoginManager
 import logging, os
 from logging.handlers import RotatingFileHandler
-
+from flask_mail import Mail
 
 app = Flask(__name__)
 app.config.from_object(Config)
+mail = Mail(app)
 db = SQLAlchemy(app)
 migrate = Migrate(app, db)
 login = LoginManager(app)
 login.login_view = 'login'
+
 
 if not app.debug:
     if not os.path.exists('logs'):
