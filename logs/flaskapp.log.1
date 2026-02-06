@@ -1,4 +1,4 @@
-2026-02-06 15:10:27,583 ERROR: Exception on / [GET] [in /Users/nich/Documents/devWorks/flaskApp/venv/lib/python3.9/site-packages/flask/app.py:875]
+2026-02-06 15:11:59,769 ERROR: Exception on / [GET] [in /Users/nich/Documents/devWorks/flaskApp/venv/lib/python3.9/site-packages/flask/app.py:875]
 Traceback (most recent call last):
   File "/Users/nich/Documents/devWorks/flaskApp/venv/lib/python3.9/site-packages/flask/app.py", line 1511, in wsgi_app
     response = self.full_dispatch_request()
@@ -10,8 +10,8 @@ Traceback (most recent call last):
     return self.ensure_sync(self.view_functions[rule.endpoint])(**view_args)  # type: ignore[no-any-return]
   File "/Users/nich/Documents/devWorks/flaskApp/venv/lib/python3.9/site-packages/flask_login/utils.py", line 290, in decorated_view
     return current_app.ensure_sync(func)(*args, **kwargs)
-  File "/Users/nich/Documents/devWorks/flaskApp/app/routes.py", line 32, in index
-    return render_template('index.html', title="Home")
+  File "/Users/nich/Documents/devWorks/flaskApp/app/routes.py", line 23, in index
+    return render_template('index.html', title="Home", posts=posts)
   File "/Users/nich/Documents/devWorks/flaskApp/venv/lib/python3.9/site-packages/flask/templating.py", line 150, in render_template
     return _render(app, template, context)
   File "/Users/nich/Documents/devWorks/flaskApp/venv/lib/python3.9/site-packages/flask/templating.py", line 131, in _render
@@ -29,8 +29,7 @@ Traceback (most recent call last):
   File "/Users/nich/Documents/devWorks/flaskApp/venv/lib/python3.9/site-packages/jinja2/environment.py", line 490, in getattr
     return getattr(obj, attribute)
 jinja2.exceptions.UndefinedError: 'form' is undefined
-2026-02-06 15:11:04,236 INFO: FlaskApp startup [in /Users/nich/Documents/devWorks/flaskApp/app/__init__.py:28]
-2026-02-06 15:11:05,296 ERROR: Exception on / [GET] [in /Users/nich/Documents/devWorks/flaskApp/venv/lib/python3.9/site-packages/flask/app.py:875]
+2026-02-06 15:12:01,129 ERROR: Exception on / [GET] [in /Users/nich/Documents/devWorks/flaskApp/venv/lib/python3.9/site-packages/flask/app.py:875]
 Traceback (most recent call last):
   File "/Users/nich/Documents/devWorks/flaskApp/venv/lib/python3.9/site-packages/flask/app.py", line 1511, in wsgi_app
     response = self.full_dispatch_request()
@@ -42,8 +41,8 @@ Traceback (most recent call last):
     return self.ensure_sync(self.view_functions[rule.endpoint])(**view_args)  # type: ignore[no-any-return]
   File "/Users/nich/Documents/devWorks/flaskApp/venv/lib/python3.9/site-packages/flask_login/utils.py", line 290, in decorated_view
     return current_app.ensure_sync(func)(*args, **kwargs)
-  File "/Users/nich/Documents/devWorks/flaskApp/app/routes.py", line 32, in index
-    return render_template('index.html', title="Home", post=posts)
+  File "/Users/nich/Documents/devWorks/flaskApp/app/routes.py", line 23, in index
+    return render_template('index.html', title="Home", posts=posts)
   File "/Users/nich/Documents/devWorks/flaskApp/venv/lib/python3.9/site-packages/flask/templating.py", line 150, in render_template
     return _render(app, template, context)
   File "/Users/nich/Documents/devWorks/flaskApp/venv/lib/python3.9/site-packages/flask/templating.py", line 131, in _render
@@ -61,7 +60,15 @@ Traceback (most recent call last):
   File "/Users/nich/Documents/devWorks/flaskApp/venv/lib/python3.9/site-packages/jinja2/environment.py", line 490, in getattr
     return getattr(obj, attribute)
 jinja2.exceptions.UndefinedError: 'form' is undefined
-2026-02-06 15:11:05,978 ERROR: Exception on / [GET] [in /Users/nich/Documents/devWorks/flaskApp/venv/lib/python3.9/site-packages/flask/app.py:875]
+2026-02-06 15:12:26,738 INFO: FlaskApp startup [in /Users/nich/Documents/devWorks/flaskApp/app/__init__.py:28]
+2026-02-06 15:15:13,188 INFO: FlaskApp startup [in /Users/nich/Documents/devWorks/flaskApp/app/__init__.py:28]
+2026-02-06 15:21:53,262 INFO: FlaskApp startup [in /Users/nich/Documents/devWorks/flaskApp/app/__init__.py:28]
+2026-02-06 15:23:30,775 INFO: FlaskApp startup [in /Users/nich/Documents/devWorks/flaskApp/app/__init__.py:28]
+2026-02-06 15:24:41,361 INFO: FlaskApp startup [in /Users/nich/Documents/devWorks/flaskApp/app/__init__.py:28]
+2026-02-06 15:28:21,874 INFO: FlaskApp startup [in /Users/nich/Documents/devWorks/flaskApp/app/__init__.py:28]
+2026-02-06 15:30:41,739 INFO: FlaskApp startup [in /Users/nich/Documents/devWorks/flaskApp/app/__init__.py:28]
+2026-02-06 15:31:28,175 INFO: FlaskApp startup [in /Users/nich/Documents/devWorks/flaskApp/app/__init__.py:28]
+2026-02-06 15:31:29,198 ERROR: Exception on /user/nich [GET] [in /Users/nich/Documents/devWorks/flaskApp/venv/lib/python3.9/site-packages/flask/app.py:875]
 Traceback (most recent call last):
   File "/Users/nich/Documents/devWorks/flaskApp/venv/lib/python3.9/site-packages/flask/app.py", line 1511, in wsgi_app
     response = self.full_dispatch_request()
@@ -73,23 +80,32 @@ Traceback (most recent call last):
     return self.ensure_sync(self.view_functions[rule.endpoint])(**view_args)  # type: ignore[no-any-return]
   File "/Users/nich/Documents/devWorks/flaskApp/venv/lib/python3.9/site-packages/flask_login/utils.py", line 290, in decorated_view
     return current_app.ensure_sync(func)(*args, **kwargs)
-  File "/Users/nich/Documents/devWorks/flaskApp/app/routes.py", line 32, in index
-    return render_template('index.html', title="Home", post=posts)
-  File "/Users/nich/Documents/devWorks/flaskApp/venv/lib/python3.9/site-packages/flask/templating.py", line 150, in render_template
-    return _render(app, template, context)
-  File "/Users/nich/Documents/devWorks/flaskApp/venv/lib/python3.9/site-packages/flask/templating.py", line 131, in _render
-    rv = template.render(context)
-  File "/Users/nich/Documents/devWorks/flaskApp/venv/lib/python3.9/site-packages/jinja2/environment.py", line 1295, in render
-    self.environment.handle_exception()
-  File "/Users/nich/Documents/devWorks/flaskApp/venv/lib/python3.9/site-packages/jinja2/environment.py", line 942, in handle_exception
-    raise rewrite_traceback_stack(source=source)
-  File "/Users/nich/Documents/devWorks/flaskApp/app/templates/index.html", line 1, in top-level template code
-    {% extends 'base.html' %}
-  File "/Users/nich/Documents/devWorks/flaskApp/app/templates/base.html", line 31, in top-level template code
-    {% block content %}{% endblock %}
-  File "/Users/nich/Documents/devWorks/flaskApp/app/templates/index.html", line 7, in block 'content'
-    {{ form.hidden_tag() }}
-  File "/Users/nich/Documents/devWorks/flaskApp/venv/lib/python3.9/site-packages/jinja2/environment.py", line 490, in getattr
-    return getattr(obj, attribute)
-jinja2.exceptions.UndefinedError: 'form' is undefined
-2026-02-06 15:11:58,905 INFO: FlaskApp startup [in /Users/nich/Documents/devWorks/flaskApp/app/__init__.py:28]
+  File "/Users/nich/Documents/devWorks/flaskApp/app/routes.py", line 84, in user
+    next_url = url_for('user', page=posts.next_num) if posts.has_next else None
+  File "/Users/nich/Documents/devWorks/flaskApp/venv/lib/python3.9/site-packages/flask/helpers.py", line 239, in url_for
+    return current_app.url_for(
+  File "/Users/nich/Documents/devWorks/flaskApp/venv/lib/python3.9/site-packages/flask/app.py", line 1121, in url_for
+    return self.handle_url_build_error(error, endpoint, values)
+  File "/Users/nich/Documents/devWorks/flaskApp/venv/lib/python3.9/site-packages/flask/app.py", line 1110, in url_for
+    rv = url_adapter.build(  # type: ignore[union-attr]
+  File "/Users/nich/Documents/devWorks/flaskApp/venv/lib/python3.9/site-packages/werkzeug/routing/map.py", line 924, in build
+    raise BuildError(endpoint, values, method, self)
+werkzeug.routing.exceptions.BuildError: Could not build url for endpoint 'user' with values ['page']. Did you forget to specify values ['username']?
+2026-02-06 15:33:51,309 INFO: FlaskApp startup [in /Users/nich/Documents/devWorks/flaskApp/app/__init__.py:28]
+2026-02-06 15:35:02,074 INFO: FlaskApp startup [in /Users/nich/Documents/devWorks/flaskApp/app/__init__.py:28]
+2026-02-06 16:09:19,698 INFO: FlaskApp startup [in /Users/nich/Documents/devWorks/flaskApp/app/__init__.py:29]
+2026-02-06 16:09:46,248 INFO: FlaskApp startup [in /Users/nich/Documents/devWorks/flaskApp/app/__init__.py:29]
+2026-02-06 16:11:31,875 INFO: FlaskApp startup [in /Users/nich/Documents/devWorks/flaskApp/app/__init__.py:29]
+2026-02-06 16:14:14,865 INFO: FlaskApp startup [in /Users/nich/Documents/devWorks/flaskApp/app/__init__.py:29]
+2026-02-06 16:19:40,330 INFO: FlaskApp startup [in /Users/nich/Documents/devWorks/flaskApp/app/__init__.py:29]
+2026-02-06 16:22:31,282 INFO: FlaskApp startup [in /Users/nich/Documents/devWorks/flaskApp/app/__init__.py:29]
+2026-02-06 16:25:14,638 INFO: FlaskApp startup [in /Users/nich/Documents/devWorks/flaskApp/app/__init__.py:29]
+2026-02-06 16:29:52,679 INFO: FlaskApp startup [in /Users/nich/Documents/devWorks/flaskApp/app/__init__.py:29]
+2026-02-06 16:32:22,561 INFO: FlaskApp startup [in /Users/nich/Documents/devWorks/flaskApp/app/__init__.py:29]
+2026-02-06 16:35:23,865 INFO: FlaskApp startup [in /Users/nich/Documents/devWorks/flaskApp/app/__init__.py:30]
+2026-02-06 16:37:07,367 INFO: FlaskApp startup [in /Users/nich/Documents/devWorks/flaskApp/app/__init__.py:30]
+2026-02-06 16:39:00,555 INFO: FlaskApp startup [in /Users/nich/Documents/devWorks/flaskApp/app/__init__.py:30]
+2026-02-06 16:39:54,993 INFO: FlaskApp startup [in /Users/nich/Documents/devWorks/flaskApp/app/__init__.py:30]
+2026-02-06 16:43:46,423 INFO: FlaskApp startup [in /Users/nich/Documents/devWorks/flaskApp/app/__init__.py:30]
+2026-02-06 17:19:14,528 INFO: FlaskApp startup [in /Users/nich/Documents/devWorks/flaskApp/app/__init__.py:30]
+2026-02-06 17:19:59,796 INFO: FlaskApp startup [in /Users/nich/Documents/devWorks/flaskApp/app/__init__.py:30]

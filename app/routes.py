@@ -1,11 +1,13 @@
 from flask import render_template, flash, redirect, url_for, request
-from app import app, db
-from app.forms import PostForm, LoginForm, RegistrationForm, EditProfileForm, EmptyForm
+from app import app, db, mail
+from app.forms import PostForm, LoginForm, RegistrationForm, EditProfileForm, EmptyForm, ResetPasswordRequestForm, ResetPasswordForm
 from flask_login import current_user, login_user, logout_user, login_required
 from app.models import User, Post
 import sqlalchemy as sa
 from urllib.parse import urlsplit
 from datetime import datetime, timezone
+from app.email import send_password_reset_email
+from flask_mail import Message
 
 
 @app.route('/', methods=['GET', 'POST'])
@@ -191,4 +193,47 @@ def explore():
         next_url=next_url,
         prev_url=prev_url,
         posts=posts
-    )    
+    )
+    
+@app.route('/reset_password_request', methods=['GET','POST'])
+def reset_password_request():
+    if current_user.is_authenticated:
+        return redirect(url_for('index'))
+    form = ResetPasswordRequestForm()
+    if form.validate_on_submit():
+        user = db.session.scalar(
+            sa.select(User).where(User.email == form.email.data)
+        )
+        if user:
+            send_password_reset_email(user)
+        flash('Check your email for the instructions to reset your password')
+        return redirect(url_for('index'))
+    return render_template('reset_password_request.html', title='Reset Password', form=form)   
+
+@app.route('/testemail', methods=['GET', 'POST'])
+def testemail():
+    recipient='dev.christines@gmail.com'
+    msg = Message('Twilio SendGrid Test Email', recipients=[recipient])
+    msg.body = ('Congratulations! You have sent a test email with '
+                'Twilio SendGrid!')
+    msg.html = ('<h1>{{ datetime.now(timezone.utc)}}</h1>'
+                '<p>Congratulations! You have sent a test email with '
+                '<b>Twilio SendGrid</b>!</p>')
+    mail.send(msg)
+    flash(f'A test message was sent to {recipient}.')
+    return redirect(url_for('index'))
+
+@app.route('/reset_password/<token>', methods=['GET', 'POST'])
+def reset_password(token):
+    if current_user.is_authenticated:
+        return redirect(url_for('index'))
+    user = User.verify_reset_password_token(token)
+    if not user:
+        return redirect(url_for('index'))
+    form = ResetPasswordForm()
+    if form.validate_on_submit():
+        user.set_password(form.password.data)
+        db.session.commit()
+        flash('Your password has been reset.')
+        return redirect(url_for('login'))
+    return render_template('reset_password.html', form=form)
