@@ -222,7 +222,7 @@ def testemail():
     mail.send(msg)
     flash(f'A test message was sent to {recipient}.')
     return redirect(url_for('index'))
-
+# TODO
 @app.route('/reset_password/<token>', methods=['GET', 'POST'])
 def reset_password(token):
     if current_user.is_authenticated:
