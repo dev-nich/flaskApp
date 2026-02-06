@@ -6,5 +6,4 @@ MAIL_SERVER=smtp.sendgrid.net
 MAIL_PORT=587
 MAIL_USE_TLS=True
 MAIL_USERNAME=apikey
-MAIL_PASSWORD=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
 MAIL_DEFAULT_SENDER=dev.christines@gmail.com
