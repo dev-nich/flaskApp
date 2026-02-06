@@ -1,13 +1,11 @@
 from flask import render_template, flash, redirect, url_for, request
-from app import app, db, mail
-from app.forms import PostForm, LoginForm, RegistrationForm, EditProfileForm, EmptyForm, ResetPasswordRequestForm, ResetPasswordForm
+from app import app, db
+from app.forms import PostForm, LoginForm, RegistrationForm, EditProfileForm, EmptyForm
 from flask_login import current_user, login_user, logout_user, login_required
 from app.models import User, Post
 import sqlalchemy as sa
 from urllib.parse import urlsplit
 from datetime import datetime, timezone
-from app.email import send_password_reset_email
-from flask_mail import Message
 
 
 @app.route('/', methods=['GET', 'POST'])
@@ -193,6 +191,7 @@ def explore():
         next_url=next_url,
         prev_url=prev_url,
         posts=posts
+<<<<<<< HEAD
     )
     
 @app.route('/reset_password_request', methods=['GET','POST'])
@@ -237,3 +236,6 @@ def reset_password(token):
         flash('Your password has been reset.')
         return redirect(url_for('login'))
     return render_template('reset_password.html', form=form)
+=======
+    )    
+>>>>>>> parent of 95523b9 (feat: working /testemail + fix reset password function)
