@@ -1,82 +1,4 @@
-2026-02-06 09:41:34,336 INFO: FlaskApp startup [in /Users/nich/Documents/devWorks/flaskApp/app/__init__.py:28]
-2026-02-06 09:48:59,380 INFO: FlaskApp startup [in /Users/nich/Documents/devWorks/flaskApp/app/__init__.py:28]
-2026-02-06 10:14:34,425 INFO: FlaskApp startup [in /Users/nich/Documents/devWorks/flaskApp/app/__init__.py:28]
-2026-02-06 10:14:40,573 INFO: FlaskApp startup [in /Users/nich/Documents/devWorks/flaskApp/app/__init__.py:28]
-2026-02-06 10:14:43,050 INFO: FlaskApp startup [in /Users/nich/Documents/devWorks/flaskApp/app/__init__.py:28]
-2026-02-06 10:53:19,344 INFO: FlaskApp startup [in /Users/nich/Documents/devWorks/flaskApp/app/__init__.py:28]
-2026-02-06 11:04:49,476 INFO: FlaskApp startup [in /Users/nich/Documents/devWorks/flaskApp/app/__init__.py:28]
-2026-02-06 11:05:18,053 INFO: FlaskApp startup [in /Users/nich/Documents/devWorks/flaskApp/app/__init__.py:28]
-2026-02-06 11:05:38,657 INFO: FlaskApp startup [in /Users/nich/Documents/devWorks/flaskApp/app/__init__.py:28]
-2026-02-06 11:05:47,881 INFO: FlaskApp startup [in /Users/nich/Documents/devWorks/flaskApp/app/__init__.py:28]
-2026-02-06 11:06:01,671 INFO: FlaskApp startup [in /Users/nich/Documents/devWorks/flaskApp/app/__init__.py:28]
-2026-02-06 11:06:26,930 INFO: FlaskApp startup [in /Users/nich/Documents/devWorks/flaskApp/app/__init__.py:28]
-2026-02-06 11:06:55,369 INFO: FlaskApp startup [in /Users/nich/Documents/devWorks/flaskApp/app/__init__.py:28]
-2026-02-06 11:09:55,638 INFO: FlaskApp startup [in /Users/nich/Documents/devWorks/flaskApp/app/__init__.py:28]
-2026-02-06 15:06:30,348 INFO: FlaskApp startup [in /Users/nich/Documents/devWorks/flaskApp/app/__init__.py:28]
-2026-02-06 15:06:30,975 ERROR: Exception on / [GET] [in /Users/nich/Documents/devWorks/flaskApp/venv/lib/python3.9/site-packages/flask/app.py:875]
-Traceback (most recent call last):
-  File "/Users/nich/Documents/devWorks/flaskApp/venv/lib/python3.9/site-packages/flask/app.py", line 1511, in wsgi_app
-    response = self.full_dispatch_request()
-  File "/Users/nich/Documents/devWorks/flaskApp/venv/lib/python3.9/site-packages/flask/app.py", line 919, in full_dispatch_request
-    rv = self.handle_user_exception(e)
-  File "/Users/nich/Documents/devWorks/flaskApp/venv/lib/python3.9/site-packages/flask/app.py", line 917, in full_dispatch_request
-    rv = self.dispatch_request()
-  File "/Users/nich/Documents/devWorks/flaskApp/venv/lib/python3.9/site-packages/flask/app.py", line 902, in dispatch_request
-    return self.ensure_sync(self.view_functions[rule.endpoint])(**view_args)  # type: ignore[no-any-return]
-  File "/Users/nich/Documents/devWorks/flaskApp/venv/lib/python3.9/site-packages/flask_login/utils.py", line 290, in decorated_view
-    return current_app.ensure_sync(func)(*args, **kwargs)
-  File "/Users/nich/Documents/devWorks/flaskApp/app/routes.py", line 26, in index
-    return render_template('index.html', title="Home")
-  File "/Users/nich/Documents/devWorks/flaskApp/venv/lib/python3.9/site-packages/flask/templating.py", line 150, in render_template
-    return _render(app, template, context)
-  File "/Users/nich/Documents/devWorks/flaskApp/venv/lib/python3.9/site-packages/flask/templating.py", line 131, in _render
-    rv = template.render(context)
-  File "/Users/nich/Documents/devWorks/flaskApp/venv/lib/python3.9/site-packages/jinja2/environment.py", line 1295, in render
-    self.environment.handle_exception()
-  File "/Users/nich/Documents/devWorks/flaskApp/venv/lib/python3.9/site-packages/jinja2/environment.py", line 942, in handle_exception
-    raise rewrite_traceback_stack(source=source)
-  File "/Users/nich/Documents/devWorks/flaskApp/app/templates/index.html", line 1, in top-level template code
-    {% extends 'base.html' %}
-  File "/Users/nich/Documents/devWorks/flaskApp/app/templates/base.html", line 31, in top-level template code
-    {% block content %}{% endblock %}
-  File "/Users/nich/Documents/devWorks/flaskApp/app/templates/index.html", line 7, in block 'content'
-    {{ form.hidden_tag() }}
-  File "/Users/nich/Documents/devWorks/flaskApp/venv/lib/python3.9/site-packages/jinja2/environment.py", line 490, in getattr
-    return getattr(obj, attribute)
-jinja2.exceptions.UndefinedError: 'form' is undefined
-2026-02-06 15:08:54,847 ERROR: Exception on / [GET] [in /Users/nich/Documents/devWorks/flaskApp/venv/lib/python3.9/site-packages/flask/app.py:875]
-Traceback (most recent call last):
-  File "/Users/nich/Documents/devWorks/flaskApp/venv/lib/python3.9/site-packages/flask/app.py", line 1511, in wsgi_app
-    response = self.full_dispatch_request()
-  File "/Users/nich/Documents/devWorks/flaskApp/venv/lib/python3.9/site-packages/flask/app.py", line 919, in full_dispatch_request
-    rv = self.handle_user_exception(e)
-  File "/Users/nich/Documents/devWorks/flaskApp/venv/lib/python3.9/site-packages/flask/app.py", line 917, in full_dispatch_request
-    rv = self.dispatch_request()
-  File "/Users/nich/Documents/devWorks/flaskApp/venv/lib/python3.9/site-packages/flask/app.py", line 902, in dispatch_request
-    return self.ensure_sync(self.view_functions[rule.endpoint])(**view_args)  # type: ignore[no-any-return]
-  File "/Users/nich/Documents/devWorks/flaskApp/venv/lib/python3.9/site-packages/flask_login/utils.py", line 290, in decorated_view
-    return current_app.ensure_sync(func)(*args, **kwargs)
-  File "/Users/nich/Documents/devWorks/flaskApp/app/routes.py", line 26, in index
-    },
-  File "/Users/nich/Documents/devWorks/flaskApp/venv/lib/python3.9/site-packages/flask/templating.py", line 150, in render_template
-    return _render(app, template, context)
-  File "/Users/nich/Documents/devWorks/flaskApp/venv/lib/python3.9/site-packages/flask/templating.py", line 131, in _render
-    rv = template.render(context)
-  File "/Users/nich/Documents/devWorks/flaskApp/venv/lib/python3.9/site-packages/jinja2/environment.py", line 1295, in render
-    self.environment.handle_exception()
-  File "/Users/nich/Documents/devWorks/flaskApp/venv/lib/python3.9/site-packages/jinja2/environment.py", line 942, in handle_exception
-    raise rewrite_traceback_stack(source=source)
-  File "/Users/nich/Documents/devWorks/flaskApp/app/templates/index.html", line 1, in top-level template code
-    {% extends 'base.html' %}
-  File "/Users/nich/Documents/devWorks/flaskApp/app/templates/base.html", line 31, in top-level template code
-    {% block content %}{% endblock %}
-  File "/Users/nich/Documents/devWorks/flaskApp/app/templates/index.html", line 7, in block 'content'
-    {{ form.hidden_tag() }}
-  File "/Users/nich/Documents/devWorks/flaskApp/venv/lib/python3.9/site-packages/jinja2/environment.py", line 490, in getattr
-    return getattr(obj, attribute)
-jinja2.exceptions.UndefinedError: 'form' is undefined
-2026-02-06 15:08:57,476 INFO: FlaskApp startup [in /Users/nich/Documents/devWorks/flaskApp/app/__init__.py:28]
-2026-02-06 15:08:58,387 ERROR: Exception on / [GET] [in /Users/nich/Documents/devWorks/flaskApp/venv/lib/python3.9/site-packages/flask/app.py:875]
+2026-02-06 15:10:27,583 ERROR: Exception on / [GET] [in /Users/nich/Documents/devWorks/flaskApp/venv/lib/python3.9/site-packages/flask/app.py:875]
 Traceback (most recent call last):
   File "/Users/nich/Documents/devWorks/flaskApp/venv/lib/python3.9/site-packages/flask/app.py", line 1511, in wsgi_app
     response = self.full_dispatch_request()
@@ -107,4 +29,67 @@ Traceback (most recent call last):
   File "/Users/nich/Documents/devWorks/flaskApp/venv/lib/python3.9/site-packages/jinja2/environment.py", line 490, in getattr
     return getattr(obj, attribute)
 jinja2.exceptions.UndefinedError: 'form' is undefined
-2026-02-06 15:10:26,618 INFO: FlaskApp startup [in /Users/nich/Documents/devWorks/flaskApp/app/__init__.py:28]
+2026-02-06 15:11:04,236 INFO: FlaskApp startup [in /Users/nich/Documents/devWorks/flaskApp/app/__init__.py:28]
+2026-02-06 15:11:05,296 ERROR: Exception on / [GET] [in /Users/nich/Documents/devWorks/flaskApp/venv/lib/python3.9/site-packages/flask/app.py:875]
+Traceback (most recent call last):
+  File "/Users/nich/Documents/devWorks/flaskApp/venv/lib/python3.9/site-packages/flask/app.py", line 1511, in wsgi_app
+    response = self.full_dispatch_request()
+  File "/Users/nich/Documents/devWorks/flaskApp/venv/lib/python3.9/site-packages/flask/app.py", line 919, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "/Users/nich/Documents/devWorks/flaskApp/venv/lib/python3.9/site-packages/flask/app.py", line 917, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/Users/nich/Documents/devWorks/flaskApp/venv/lib/python3.9/site-packages/flask/app.py", line 902, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**view_args)  # type: ignore[no-any-return]
+  File "/Users/nich/Documents/devWorks/flaskApp/venv/lib/python3.9/site-packages/flask_login/utils.py", line 290, in decorated_view
+    return current_app.ensure_sync(func)(*args, **kwargs)
+  File "/Users/nich/Documents/devWorks/flaskApp/app/routes.py", line 32, in index
+    return render_template('index.html', title="Home", post=posts)
+  File "/Users/nich/Documents/devWorks/flaskApp/venv/lib/python3.9/site-packages/flask/templating.py", line 150, in render_template
+    return _render(app, template, context)
+  File "/Users/nich/Documents/devWorks/flaskApp/venv/lib/python3.9/site-packages/flask/templating.py", line 131, in _render
+    rv = template.render(context)
+  File "/Users/nich/Documents/devWorks/flaskApp/venv/lib/python3.9/site-packages/jinja2/environment.py", line 1295, in render
+    self.environment.handle_exception()
+  File "/Users/nich/Documents/devWorks/flaskApp/venv/lib/python3.9/site-packages/jinja2/environment.py", line 942, in handle_exception
+    raise rewrite_traceback_stack(source=source)
+  File "/Users/nich/Documents/devWorks/flaskApp/app/templates/index.html", line 1, in top-level template code
+    {% extends 'base.html' %}
+  File "/Users/nich/Documents/devWorks/flaskApp/app/templates/base.html", line 31, in top-level template code
+    {% block content %}{% endblock %}
+  File "/Users/nich/Documents/devWorks/flaskApp/app/templates/index.html", line 7, in block 'content'
+    {{ form.hidden_tag() }}
+  File "/Users/nich/Documents/devWorks/flaskApp/venv/lib/python3.9/site-packages/jinja2/environment.py", line 490, in getattr
+    return getattr(obj, attribute)
+jinja2.exceptions.UndefinedError: 'form' is undefined
+2026-02-06 15:11:05,978 ERROR: Exception on / [GET] [in /Users/nich/Documents/devWorks/flaskApp/venv/lib/python3.9/site-packages/flask/app.py:875]
+Traceback (most recent call last):
+  File "/Users/nich/Documents/devWorks/flaskApp/venv/lib/python3.9/site-packages/flask/app.py", line 1511, in wsgi_app
+    response = self.full_dispatch_request()
+  File "/Users/nich/Documents/devWorks/flaskApp/venv/lib/python3.9/site-packages/flask/app.py", line 919, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "/Users/nich/Documents/devWorks/flaskApp/venv/lib/python3.9/site-packages/flask/app.py", line 917, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/Users/nich/Documents/devWorks/flaskApp/venv/lib/python3.9/site-packages/flask/app.py", line 902, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**view_args)  # type: ignore[no-any-return]
+  File "/Users/nich/Documents/devWorks/flaskApp/venv/lib/python3.9/site-packages/flask_login/utils.py", line 290, in decorated_view
+    return current_app.ensure_sync(func)(*args, **kwargs)
+  File "/Users/nich/Documents/devWorks/flaskApp/app/routes.py", line 32, in index
+    return render_template('index.html', title="Home", post=posts)
+  File "/Users/nich/Documents/devWorks/flaskApp/venv/lib/python3.9/site-packages/flask/templating.py", line 150, in render_template
+    return _render(app, template, context)
+  File "/Users/nich/Documents/devWorks/flaskApp/venv/lib/python3.9/site-packages/flask/templating.py", line 131, in _render
+    rv = template.render(context)
+  File "/Users/nich/Documents/devWorks/flaskApp/venv/lib/python3.9/site-packages/jinja2/environment.py", line 1295, in render
+    self.environment.handle_exception()
+  File "/Users/nich/Documents/devWorks/flaskApp/venv/lib/python3.9/site-packages/jinja2/environment.py", line 942, in handle_exception
+    raise rewrite_traceback_stack(source=source)
+  File "/Users/nich/Documents/devWorks/flaskApp/app/templates/index.html", line 1, in top-level template code
+    {% extends 'base.html' %}
+  File "/Users/nich/Documents/devWorks/flaskApp/app/templates/base.html", line 31, in top-level template code
+    {% block content %}{% endblock %}
+  File "/Users/nich/Documents/devWorks/flaskApp/app/templates/index.html", line 7, in block 'content'
+    {{ form.hidden_tag() }}
+  File "/Users/nich/Documents/devWorks/flaskApp/venv/lib/python3.9/site-packages/jinja2/environment.py", line 490, in getattr
+    return getattr(obj, attribute)
+jinja2.exceptions.UndefinedError: 'form' is undefined
+2026-02-06 15:11:58,905 INFO: FlaskApp startup [in /Users/nich/Documents/devWorks/flaskApp/app/__init__.py:28]

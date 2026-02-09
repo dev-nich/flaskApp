@@ -13,3 +13,4 @@ class Config:
     MAIL_USERNAME=os.environ.get('MAIL_USERNAME') or ''
     MAIL_PASSWORD=os.environ.get('MAIL_PASSWORD') or ''
     MAIL_DEFAULT_SENDER=os.environ.get('MAIL_DEFAULT_SENDER') or ''
+    ADMINS=os.environ.get('ADMINS') or None

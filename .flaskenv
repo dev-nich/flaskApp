@@ -8,3 +8,4 @@ MAIL_USE_TLS=True
 MAIL_USERNAME=apikey
 MAIL_PASSWORD=
 MAIL_DEFAULT_SENDER=dev.christines@gmail.com
+ADMINS=['dev.christines@gmail.com']

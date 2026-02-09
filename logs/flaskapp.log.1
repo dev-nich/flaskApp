@@ -1,4 +1,7 @@
-2026-02-06 15:10:27,583 ERROR: Exception on / [GET] [in /Users/nich/Documents/devWorks/flaskApp/venv/lib/python3.9/site-packages/flask/app.py:875]
+2026-02-06 21:06:17,448 INFO: FlaskApp startup [in /Users/nich/Documents/devWorks/flaskApp/app/__init__.py:30]
+2026-02-06 21:12:51,836 INFO: FlaskApp startup [in /Users/nich/Documents/devWorks/flaskApp/app/__init__.py:30]
+2026-02-09 09:46:06,410 INFO: FlaskApp startup [in /Users/nich/Documents/devWorks/flaskApp/app/__init__.py:30]
+2026-02-09 09:46:14,833 ERROR: Exception on /testemail [GET] [in /Users/nich/Documents/devWorks/flaskApp/venv/lib/python3.9/site-packages/flask/app.py:875]
 Traceback (most recent call last):
   File "/Users/nich/Documents/devWorks/flaskApp/venv/lib/python3.9/site-packages/flask/app.py", line 1511, in wsgi_app
     response = self.full_dispatch_request()
@@ -8,29 +11,28 @@ Traceback (most recent call last):
     rv = self.dispatch_request()
   File "/Users/nich/Documents/devWorks/flaskApp/venv/lib/python3.9/site-packages/flask/app.py", line 902, in dispatch_request
     return self.ensure_sync(self.view_functions[rule.endpoint])(**view_args)  # type: ignore[no-any-return]
-  File "/Users/nich/Documents/devWorks/flaskApp/venv/lib/python3.9/site-packages/flask_login/utils.py", line 290, in decorated_view
-    return current_app.ensure_sync(func)(*args, **kwargs)
-  File "/Users/nich/Documents/devWorks/flaskApp/app/routes.py", line 32, in index
-    return render_template('index.html', title="Home")
-  File "/Users/nich/Documents/devWorks/flaskApp/venv/lib/python3.9/site-packages/flask/templating.py", line 150, in render_template
-    return _render(app, template, context)
-  File "/Users/nich/Documents/devWorks/flaskApp/venv/lib/python3.9/site-packages/flask/templating.py", line 131, in _render
-    rv = template.render(context)
-  File "/Users/nich/Documents/devWorks/flaskApp/venv/lib/python3.9/site-packages/jinja2/environment.py", line 1295, in render
-    self.environment.handle_exception()
-  File "/Users/nich/Documents/devWorks/flaskApp/venv/lib/python3.9/site-packages/jinja2/environment.py", line 942, in handle_exception
-    raise rewrite_traceback_stack(source=source)
-  File "/Users/nich/Documents/devWorks/flaskApp/app/templates/index.html", line 1, in top-level template code
-    {% extends 'base.html' %}
-  File "/Users/nich/Documents/devWorks/flaskApp/app/templates/base.html", line 31, in top-level template code
-    {% block content %}{% endblock %}
-  File "/Users/nich/Documents/devWorks/flaskApp/app/templates/index.html", line 7, in block 'content'
-    {{ form.hidden_tag() }}
-  File "/Users/nich/Documents/devWorks/flaskApp/venv/lib/python3.9/site-packages/jinja2/environment.py", line 490, in getattr
-    return getattr(obj, attribute)
-jinja2.exceptions.UndefinedError: 'form' is undefined
-2026-02-06 15:11:04,236 INFO: FlaskApp startup [in /Users/nich/Documents/devWorks/flaskApp/app/__init__.py:28]
-2026-02-06 15:11:05,296 ERROR: Exception on / [GET] [in /Users/nich/Documents/devWorks/flaskApp/venv/lib/python3.9/site-packages/flask/app.py:875]
+  File "/Users/nich/Documents/devWorks/flaskApp/app/routes.py", line 222, in testemail
+    mail.send(msg)
+  File "/Users/nich/Documents/devWorks/flaskApp/venv/lib/python3.9/site-packages/flask_mail/__init__.py", line 539, in send
+    with self.connect() as connection:
+  File "/Users/nich/Documents/devWorks/flaskApp/venv/lib/python3.9/site-packages/flask_mail/__init__.py", line 127, in __enter__
+    self.host = self.configure_host()
+  File "/Users/nich/Documents/devWorks/flaskApp/venv/lib/python3.9/site-packages/flask_mail/__init__.py", line 144, in configure_host
+    host = smtplib.SMTP(self.mail.server, self.mail.port)
+  File "/Library/Frameworks/Python.framework/Versions/3.9/lib/python3.9/smtplib.py", line 253, in __init__
+    (code, msg) = self.connect(host, port)
+  File "/Library/Frameworks/Python.framework/Versions/3.9/lib/python3.9/smtplib.py", line 339, in connect
+    self.sock = self._get_socket(host, port, self.timeout)
+  File "/Library/Frameworks/Python.framework/Versions/3.9/lib/python3.9/smtplib.py", line 310, in _get_socket
+    return socket.create_connection((host, port), timeout,
+  File "/Library/Frameworks/Python.framework/Versions/3.9/lib/python3.9/socket.py", line 843, in create_connection
+    raise err
+  File "/Library/Frameworks/Python.framework/Versions/3.9/lib/python3.9/socket.py", line 831, in create_connection
+    sock.connect(sa)
+ConnectionRefusedError: [Errno 61] Connection refused
+2026-02-09 10:04:56,344 INFO: FlaskApp startup [in /Users/nich/Documents/devWorks/flaskApp/app/__init__.py:30]
+2026-02-09 11:46:05,175 INFO: FlaskApp startup [in /Users/nich/Documents/devWorks/flaskApp/app/__init__.py:30]
+2026-02-09 11:46:09,192 ERROR: Exception on /testemail [GET] [in /Users/nich/Documents/devWorks/flaskApp/venv/lib/python3.9/site-packages/flask/app.py:875]
 Traceback (most recent call last):
   File "/Users/nich/Documents/devWorks/flaskApp/venv/lib/python3.9/site-packages/flask/app.py", line 1511, in wsgi_app
     response = self.full_dispatch_request()
@@ -40,28 +42,27 @@ Traceback (most recent call last):
     rv = self.dispatch_request()
   File "/Users/nich/Documents/devWorks/flaskApp/venv/lib/python3.9/site-packages/flask/app.py", line 902, in dispatch_request
     return self.ensure_sync(self.view_functions[rule.endpoint])(**view_args)  # type: ignore[no-any-return]
-  File "/Users/nich/Documents/devWorks/flaskApp/venv/lib/python3.9/site-packages/flask_login/utils.py", line 290, in decorated_view
-    return current_app.ensure_sync(func)(*args, **kwargs)
-  File "/Users/nich/Documents/devWorks/flaskApp/app/routes.py", line 32, in index
-    return render_template('index.html', title="Home", post=posts)
-  File "/Users/nich/Documents/devWorks/flaskApp/venv/lib/python3.9/site-packages/flask/templating.py", line 150, in render_template
-    return _render(app, template, context)
-  File "/Users/nich/Documents/devWorks/flaskApp/venv/lib/python3.9/site-packages/flask/templating.py", line 131, in _render
-    rv = template.render(context)
-  File "/Users/nich/Documents/devWorks/flaskApp/venv/lib/python3.9/site-packages/jinja2/environment.py", line 1295, in render
-    self.environment.handle_exception()
-  File "/Users/nich/Documents/devWorks/flaskApp/venv/lib/python3.9/site-packages/jinja2/environment.py", line 942, in handle_exception
-    raise rewrite_traceback_stack(source=source)
-  File "/Users/nich/Documents/devWorks/flaskApp/app/templates/index.html", line 1, in top-level template code
-    {% extends 'base.html' %}
-  File "/Users/nich/Documents/devWorks/flaskApp/app/templates/base.html", line 31, in top-level template code
-    {% block content %}{% endblock %}
-  File "/Users/nich/Documents/devWorks/flaskApp/app/templates/index.html", line 7, in block 'content'
-    {{ form.hidden_tag() }}
-  File "/Users/nich/Documents/devWorks/flaskApp/venv/lib/python3.9/site-packages/jinja2/environment.py", line 490, in getattr
-    return getattr(obj, attribute)
-jinja2.exceptions.UndefinedError: 'form' is undefined
-2026-02-06 15:11:05,978 ERROR: Exception on / [GET] [in /Users/nich/Documents/devWorks/flaskApp/venv/lib/python3.9/site-packages/flask/app.py:875]
+  File "/Users/nich/Documents/devWorks/flaskApp/app/routes.py", line 222, in testemail
+    mail.send(msg)
+  File "/Users/nich/Documents/devWorks/flaskApp/venv/lib/python3.9/site-packages/flask_mail/__init__.py", line 539, in send
+    with self.connect() as connection:
+  File "/Users/nich/Documents/devWorks/flaskApp/venv/lib/python3.9/site-packages/flask_mail/__init__.py", line 127, in __enter__
+    self.host = self.configure_host()
+  File "/Users/nich/Documents/devWorks/flaskApp/venv/lib/python3.9/site-packages/flask_mail/__init__.py", line 144, in configure_host
+    host = smtplib.SMTP(self.mail.server, self.mail.port)
+  File "/Library/Frameworks/Python.framework/Versions/3.9/lib/python3.9/smtplib.py", line 253, in __init__
+    (code, msg) = self.connect(host, port)
+  File "/Library/Frameworks/Python.framework/Versions/3.9/lib/python3.9/smtplib.py", line 339, in connect
+    self.sock = self._get_socket(host, port, self.timeout)
+  File "/Library/Frameworks/Python.framework/Versions/3.9/lib/python3.9/smtplib.py", line 310, in _get_socket
+    return socket.create_connection((host, port), timeout,
+  File "/Library/Frameworks/Python.framework/Versions/3.9/lib/python3.9/socket.py", line 843, in create_connection
+    raise err
+  File "/Library/Frameworks/Python.framework/Versions/3.9/lib/python3.9/socket.py", line 831, in create_connection
+    sock.connect(sa)
+ConnectionRefusedError: [Errno 61] Connection refused
+2026-02-09 11:47:11,450 INFO: FlaskApp startup [in /Users/nich/Documents/devWorks/flaskApp/app/__init__.py:30]
+2026-02-09 11:47:30,655 ERROR: Exception on /testemail [GET] [in /Users/nich/Documents/devWorks/flaskApp/venv/lib/python3.9/site-packages/flask/app.py:875]
 Traceback (most recent call last):
   File "/Users/nich/Documents/devWorks/flaskApp/venv/lib/python3.9/site-packages/flask/app.py", line 1511, in wsgi_app
     response = self.full_dispatch_request()
@@ -71,25 +72,50 @@ Traceback (most recent call last):
     rv = self.dispatch_request()
   File "/Users/nich/Documents/devWorks/flaskApp/venv/lib/python3.9/site-packages/flask/app.py", line 902, in dispatch_request
     return self.ensure_sync(self.view_functions[rule.endpoint])(**view_args)  # type: ignore[no-any-return]
-  File "/Users/nich/Documents/devWorks/flaskApp/venv/lib/python3.9/site-packages/flask_login/utils.py", line 290, in decorated_view
-    return current_app.ensure_sync(func)(*args, **kwargs)
-  File "/Users/nich/Documents/devWorks/flaskApp/app/routes.py", line 32, in index
-    return render_template('index.html', title="Home", post=posts)
-  File "/Users/nich/Documents/devWorks/flaskApp/venv/lib/python3.9/site-packages/flask/templating.py", line 150, in render_template
-    return _render(app, template, context)
-  File "/Users/nich/Documents/devWorks/flaskApp/venv/lib/python3.9/site-packages/flask/templating.py", line 131, in _render
-    rv = template.render(context)
-  File "/Users/nich/Documents/devWorks/flaskApp/venv/lib/python3.9/site-packages/jinja2/environment.py", line 1295, in render
-    self.environment.handle_exception()
-  File "/Users/nich/Documents/devWorks/flaskApp/venv/lib/python3.9/site-packages/jinja2/environment.py", line 942, in handle_exception
-    raise rewrite_traceback_stack(source=source)
-  File "/Users/nich/Documents/devWorks/flaskApp/app/templates/index.html", line 1, in top-level template code
-    {% extends 'base.html' %}
-  File "/Users/nich/Documents/devWorks/flaskApp/app/templates/base.html", line 31, in top-level template code
-    {% block content %}{% endblock %}
-  File "/Users/nich/Documents/devWorks/flaskApp/app/templates/index.html", line 7, in block 'content'
-    {{ form.hidden_tag() }}
-  File "/Users/nich/Documents/devWorks/flaskApp/venv/lib/python3.9/site-packages/jinja2/environment.py", line 490, in getattr
-    return getattr(obj, attribute)
-jinja2.exceptions.UndefinedError: 'form' is undefined
-2026-02-06 15:11:58,905 INFO: FlaskApp startup [in /Users/nich/Documents/devWorks/flaskApp/app/__init__.py:28]
+  File "/Users/nich/Documents/devWorks/flaskApp/app/routes.py", line 222, in testemail
+    mail.send(msg)
+  File "/Users/nich/Documents/devWorks/flaskApp/venv/lib/python3.9/site-packages/flask_mail/__init__.py", line 539, in send
+    with self.connect() as connection:
+  File "/Users/nich/Documents/devWorks/flaskApp/venv/lib/python3.9/site-packages/flask_mail/__init__.py", line 127, in __enter__
+    self.host = self.configure_host()
+  File "/Users/nich/Documents/devWorks/flaskApp/venv/lib/python3.9/site-packages/flask_mail/__init__.py", line 152, in configure_host
+    host.login(self.mail.username, self.mail.password)
+  File "/Library/Frameworks/Python.framework/Versions/3.9/lib/python3.9/smtplib.py", line 723, in login
+    (code, resp) = self.auth(
+  File "/Library/Frameworks/Python.framework/Versions/3.9/lib/python3.9/smtplib.py", line 635, in auth
+    (code, resp) = self.docmd("AUTH", mechanism + " " + response)
+  File "/Library/Frameworks/Python.framework/Versions/3.9/lib/python3.9/smtplib.py", line 425, in docmd
+    return self.getreply()
+  File "/Library/Frameworks/Python.framework/Versions/3.9/lib/python3.9/smtplib.py", line 398, in getreply
+    raise SMTPServerDisconnected("Connection unexpectedly closed")
+smtplib.SMTPServerDisconnected: Connection unexpectedly closed
+2026-02-09 11:50:25,500 INFO: FlaskApp startup [in /Users/nich/Documents/devWorks/flaskApp/app/__init__.py:30]
+2026-02-09 11:50:29,047 ERROR: Exception on /testemail [GET] [in /Users/nich/Documents/devWorks/flaskApp/venv/lib/python3.9/site-packages/flask/app.py:875]
+Traceback (most recent call last):
+  File "/Users/nich/Documents/devWorks/flaskApp/venv/lib/python3.9/site-packages/flask/app.py", line 1511, in wsgi_app
+    response = self.full_dispatch_request()
+  File "/Users/nich/Documents/devWorks/flaskApp/venv/lib/python3.9/site-packages/flask/app.py", line 919, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "/Users/nich/Documents/devWorks/flaskApp/venv/lib/python3.9/site-packages/flask/app.py", line 917, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/Users/nich/Documents/devWorks/flaskApp/venv/lib/python3.9/site-packages/flask/app.py", line 902, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**view_args)  # type: ignore[no-any-return]
+  File "/Users/nich/Documents/devWorks/flaskApp/app/routes.py", line 222, in testemail
+    mail.send(msg)
+  File "/Users/nich/Documents/devWorks/flaskApp/venv/lib/python3.9/site-packages/flask_mail/__init__.py", line 539, in send
+    with self.connect() as connection:
+  File "/Users/nich/Documents/devWorks/flaskApp/venv/lib/python3.9/site-packages/flask_mail/__init__.py", line 127, in __enter__
+    self.host = self.configure_host()
+  File "/Users/nich/Documents/devWorks/flaskApp/venv/lib/python3.9/site-packages/flask_mail/__init__.py", line 152, in configure_host
+    host.login(self.mail.username, self.mail.password)
+  File "/Library/Frameworks/Python.framework/Versions/3.9/lib/python3.9/smtplib.py", line 723, in login
+    (code, resp) = self.auth(
+  File "/Library/Frameworks/Python.framework/Versions/3.9/lib/python3.9/smtplib.py", line 635, in auth
+    (code, resp) = self.docmd("AUTH", mechanism + " " + response)
+  File "/Library/Frameworks/Python.framework/Versions/3.9/lib/python3.9/smtplib.py", line 425, in docmd
+    return self.getreply()
+  File "/Library/Frameworks/Python.framework/Versions/3.9/lib/python3.9/smtplib.py", line 398, in getreply
+    raise SMTPServerDisconnected("Connection unexpectedly closed")
+smtplib.SMTPServerDisconnected: Connection unexpectedly closed
+2026-02-09 12:30:27,483 INFO: FlaskApp startup [in /Users/nich/Documents/devWorks/flaskApp/app/__init__.py:30]
+2026-02-09 13:04:06,746 INFO: FlaskApp startup [in /Users/nich/Documents/devWorks/flaskApp/app/__init__.py:30]

@@ -213,12 +213,9 @@ def reset_password_request():
 @app.route('/testemail', methods=['GET', 'POST'])
 def testemail():
     recipient='dev.christines@gmail.com'
-    msg = Message('Twilio SendGrid Test Email', recipients=[recipient])
-    msg.body = ('Congratulations! You have sent a test email with '
-                'Twilio SendGrid!')
-    msg.html = ('<h1>{{ datetime.now(timezone.utc)}}</h1>'
-                '<p>Congratulations! You have sent a test email with '
-                '<b>Twilio SendGrid</b>!</p>')
+    msg = Message('Test Email', recipients=[recipient])
+    msg.body = ('Congratulations!')
+    msg.html = ('<h1>Test Email</h1><p>Congratulations! You have sent a test email with <b>Twilio SendGrid</b>!</p>')
     mail.send(msg)
     flash(f'A test message was sent to {recipient}.')
     return redirect(url_for('index'))
